@@ -52,29 +52,49 @@ p{
   color: var(--Medium-Grey);
   font-weight: 400;
 }
-h1,p,img{
-  padding-bottom: 2.5rem;
+
+h1,p{
+  padding-bottom:clamp(2rem,2vw,2.5rem);
 }
 ul{
-  margin: 2rem 0;
+  margin: clamp(1.5rem,1.5vw,2rem) 0;
 }
 .container{
-  width:clamp(30rem,90%,35rem);
+  width:clamp(30rem,90%,40rem);
   background-color: var(--Dark-Blue);
   flex-direction: column;
   border-radius: 1.5rem;
   overflow: hidden;
+  animation:goingright 3s ease;
+}
+
+@keyframes goingright {
+  0%{
+    opacity: 0;
+    transform:translateX(-5rem);
+  }
+  80%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
 }
 section{
   padding: clamp(3rem,3vw,3.5rem) clamp(2.5rem,3vw,3.5rem);
-  height: clamp(44rem,44vw,48rem);
+  height: clamp(41rem,42vw,47rem);
   
 }
 
 /* <!-- Rating state start --> */
 .rating-state{
-  padding-top: 5rem;
+  padding-top: clamp(4rem,3.5vw,5rem);
 
+}
+.rating-state img{
+  margin-bottom: 2rem;
 }
 .rating-state img,.btn{
   border-radius: 50%;
@@ -96,6 +116,7 @@ section{
 }
 button{
   cursor: pointer;
+ 
 }
 button[type ='submit']{
  width: 100%;
@@ -107,8 +128,8 @@ button[type ='submit']{
  font-weight: 700;
  
 }
-.btn-sumbit{
-  margin: 2rem 0;
+.btn-sumbit,.btn-reset{
+  margin:clamp(1.5rem,2.5vw,2rem)0;
 }
 button[type ='submit']:hover{
   color: var(--Orange);
